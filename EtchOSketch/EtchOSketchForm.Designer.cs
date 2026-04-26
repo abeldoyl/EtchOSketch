@@ -183,42 +183,51 @@
             DisplayPictureBox.Size = new Size(776, 360);
             DisplayPictureBox.TabIndex = 3;
             DisplayPictureBox.TabStop = false;
+            DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
             // 
             // ExitButton
             // 
+            ExitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ExitButton.Location = new Point(680, 396);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(108, 53);
             ExitButton.TabIndex = 4;
             ExitButton.Text = "E&xit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // ClearButton
             // 
+            ClearButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ClearButton.Location = new Point(566, 396);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(108, 53);
             ClearButton.TabIndex = 5;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // DrawWaveformsButton
             // 
+            DrawWaveformsButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DrawWaveformsButton.Location = new Point(452, 396);
             DrawWaveformsButton.Name = "DrawWaveformsButton";
             DrawWaveformsButton.Size = new Size(108, 53);
             DrawWaveformsButton.TabIndex = 6;
             DrawWaveformsButton.Text = "Draw Waveforms";
             DrawWaveformsButton.UseVisualStyleBackColor = true;
+            DrawWaveformsButton.Click += DrawWaveformsButton_Click;
             // 
             // SelectColorButton
             // 
+            SelectColorButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             SelectColorButton.Location = new Point(338, 396);
             SelectColorButton.Name = "SelectColorButton";
             SelectColorButton.Size = new Size(108, 53);
             SelectColorButton.TabIndex = 7;
             SelectColorButton.Text = "Select Color";
             SelectColorButton.UseVisualStyleBackColor = true;
+            SelectColorButton.Click += SelectColorButton_Click;
             // 
             // EtchOSketchForm
             // 
