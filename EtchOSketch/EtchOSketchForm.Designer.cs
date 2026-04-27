@@ -76,7 +76,7 @@
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(92, 22);
+            exitToolStripMenuItem.Size = new Size(180, 22);
             exitToolStripMenuItem.Text = "E&xit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -90,21 +90,21 @@
             // selectColorToolStripMenuItem
             // 
             selectColorToolStripMenuItem.Name = "selectColorToolStripMenuItem";
-            selectColorToolStripMenuItem.Size = new Size(180, 22);
+            selectColorToolStripMenuItem.Size = new Size(164, 22);
             selectColorToolStripMenuItem.Text = "&Select Color";
             selectColorToolStripMenuItem.Click += selectColorToolStripMenuItem_Click;
             // 
             // drawWaveformsToolStripMenuItem
             // 
             drawWaveformsToolStripMenuItem.Name = "drawWaveformsToolStripMenuItem";
-            drawWaveformsToolStripMenuItem.Size = new Size(180, 22);
+            drawWaveformsToolStripMenuItem.Size = new Size(164, 22);
             drawWaveformsToolStripMenuItem.Text = "&Draw Waveforms";
             drawWaveformsToolStripMenuItem.Click += drawWaveformsToolStripMenuItem_Click;
             // 
             // clearToolStripMenuItem
             // 
             clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            clearToolStripMenuItem.Size = new Size(180, 22);
+            clearToolStripMenuItem.Size = new Size(164, 22);
             clearToolStripMenuItem.Text = "&Clear";
             clearToolStripMenuItem.Click += clearToolStripMenuItem_Click;
             // 
@@ -118,8 +118,9 @@
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(107, 22);
+            aboutToolStripMenuItem.Size = new Size(180, 22);
             aboutToolStripMenuItem.Text = "&About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // MainContextMenuStrip
             // 
@@ -206,7 +207,7 @@
             ClearButton.Location = new Point(566, 396);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(108, 53);
-            ClearButton.TabIndex = 5;
+            ClearButton.TabIndex = 3;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
@@ -217,7 +218,7 @@
             DrawWaveformsButton.Location = new Point(452, 396);
             DrawWaveformsButton.Name = "DrawWaveformsButton";
             DrawWaveformsButton.Size = new Size(108, 53);
-            DrawWaveformsButton.TabIndex = 6;
+            DrawWaveformsButton.TabIndex = 2;
             DrawWaveformsButton.Text = "&Draw Waveforms";
             DrawWaveformsButton.UseVisualStyleBackColor = true;
             DrawWaveformsButton.Click += DrawWaveformsButton_Click;
@@ -228,7 +229,7 @@
             SelectColorButton.Location = new Point(338, 396);
             SelectColorButton.Name = "SelectColorButton";
             SelectColorButton.Size = new Size(108, 53);
-            SelectColorButton.TabIndex = 7;
+            SelectColorButton.TabIndex = 1;
             SelectColorButton.Text = "&Select Color";
             SelectColorButton.UseVisualStyleBackColor = true;
             SelectColorButton.Click += SelectColorButton_Click;

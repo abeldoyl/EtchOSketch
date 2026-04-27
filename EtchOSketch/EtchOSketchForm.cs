@@ -215,11 +215,11 @@ namespace EtchOSketch
             ClearButton_Click(sender, e);
         }
 
-
-        //private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    AboutForm aboutForm = new AboutForm();
-        //    aboutForm.ShowDialog();
-        //}
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is an EtchOSketch program, with basic drawing functions. \n" +
+               "You are able draw lines with your mouse, select different colors, and clear the screen. \n" +
+               "There is also a Sine, Cosine, and Tangent waves function that draws each wave in different colors.");
+        }
     }
 }
