@@ -52,6 +52,7 @@
             ClearButton = new Button();
             DrawWaveformsButton = new Button();
             SelectColorButton = new Button();
+            MainToolTip = new ToolTip(components);
             TopMenuStrip.SuspendLayout();
             MainContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
@@ -188,6 +189,7 @@
             DisplayPictureBox.Size = new Size(776, 360);
             DisplayPictureBox.TabIndex = 3;
             DisplayPictureBox.TabStop = false;
+            MainToolTip.SetToolTip(DisplayPictureBox, "Use mouse to draw");
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
             // 
             // ExitButton
@@ -198,6 +200,7 @@
             ExitButton.Size = new Size(108, 53);
             ExitButton.TabIndex = 4;
             ExitButton.Text = "E&xit";
+            MainToolTip.SetToolTip(ExitButton, "Leave program");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -209,6 +212,7 @@
             ClearButton.Size = new Size(108, 53);
             ClearButton.TabIndex = 3;
             ClearButton.Text = "&Clear";
+            MainToolTip.SetToolTip(ClearButton, "Clears screen when pressed");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -220,6 +224,7 @@
             DrawWaveformsButton.Size = new Size(108, 53);
             DrawWaveformsButton.TabIndex = 2;
             DrawWaveformsButton.Text = "&Draw Waveforms";
+            MainToolTip.SetToolTip(DrawWaveformsButton, "Clears and draws a Cosine, Sine, and Tangent waveforms when pressed");
             DrawWaveformsButton.UseVisualStyleBackColor = true;
             DrawWaveformsButton.Click += DrawWaveformsButton_Click;
             // 
@@ -231,6 +236,7 @@
             SelectColorButton.Size = new Size(108, 53);
             SelectColorButton.TabIndex = 1;
             SelectColorButton.Text = "&Select Color";
+            MainToolTip.SetToolTip(SelectColorButton, "Select the color of the pen you wish to draw with");
             SelectColorButton.UseVisualStyleBackColor = true;
             SelectColorButton.Click += SelectColorButton_Click;
             // 
@@ -286,5 +292,6 @@
         private Button ClearButton;
         private Button DrawWaveformsButton;
         private Button SelectColorButton;
+        private ToolTip MainToolTip;
     }
 }
