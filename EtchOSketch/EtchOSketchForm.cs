@@ -1,3 +1,10 @@
+/*
+Abel Doyle
+RCET 2265
+Spring Semester 2026
+EtchOSketch
+https://github.com/abeldoyl/EtchOSketch.git
+*/
 namespace EtchOSketch
 {
     public partial class EtchOSketchForm : Form
