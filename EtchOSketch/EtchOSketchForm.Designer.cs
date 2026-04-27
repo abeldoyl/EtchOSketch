@@ -78,6 +78,7 @@
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new Size(92, 22);
             exitToolStripMenuItem.Text = "E&xit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
@@ -89,20 +90,23 @@
             // selectColorToolStripMenuItem
             // 
             selectColorToolStripMenuItem.Name = "selectColorToolStripMenuItem";
-            selectColorToolStripMenuItem.Size = new Size(164, 22);
-            selectColorToolStripMenuItem.Text = "Select Color";
+            selectColorToolStripMenuItem.Size = new Size(180, 22);
+            selectColorToolStripMenuItem.Text = "&Select Color";
+            selectColorToolStripMenuItem.Click += selectColorToolStripMenuItem_Click;
             // 
             // drawWaveformsToolStripMenuItem
             // 
             drawWaveformsToolStripMenuItem.Name = "drawWaveformsToolStripMenuItem";
-            drawWaveformsToolStripMenuItem.Size = new Size(164, 22);
-            drawWaveformsToolStripMenuItem.Text = "Draw Waveforms";
+            drawWaveformsToolStripMenuItem.Size = new Size(180, 22);
+            drawWaveformsToolStripMenuItem.Text = "&Draw Waveforms";
+            drawWaveformsToolStripMenuItem.Click += drawWaveformsToolStripMenuItem_Click;
             // 
             // clearToolStripMenuItem
             // 
             clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            clearToolStripMenuItem.Size = new Size(164, 22);
+            clearToolStripMenuItem.Size = new Size(180, 22);
             clearToolStripMenuItem.Text = "&Clear";
+            clearToolStripMenuItem.Click += clearToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -214,7 +218,7 @@
             DrawWaveformsButton.Name = "DrawWaveformsButton";
             DrawWaveformsButton.Size = new Size(108, 53);
             DrawWaveformsButton.TabIndex = 6;
-            DrawWaveformsButton.Text = "Draw Waveforms";
+            DrawWaveformsButton.Text = "&Draw Waveforms";
             DrawWaveformsButton.UseVisualStyleBackColor = true;
             DrawWaveformsButton.Click += DrawWaveformsButton_Click;
             // 
@@ -225,7 +229,7 @@
             SelectColorButton.Name = "SelectColorButton";
             SelectColorButton.Size = new Size(108, 53);
             SelectColorButton.TabIndex = 7;
-            SelectColorButton.Text = "Select Color";
+            SelectColorButton.Text = "&Select Color";
             SelectColorButton.UseVisualStyleBackColor = true;
             SelectColorButton.Click += SelectColorButton_Click;
             // 

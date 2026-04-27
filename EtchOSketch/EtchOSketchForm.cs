@@ -129,6 +129,22 @@ namespace EtchOSketch
             }
             this.PenColor = oldColor;
         }
+        private void ShakeEtchOSketch()
+        {
+            Random random = new Random();
+            int shakeAmount = 15; // Adjust this value to increase/decrease the shake intensity
+            int originalX = this.Location.X;
+            int originalY = this.Location.Y;
+
+            for (int i = 0; i < 10; i++)
+            {
+                int offsetX = random.Next(-shakeAmount, shakeAmount + 1);
+                int offsetY = random.Next(-shakeAmount, shakeAmount + 1);
+                System.Threading.Thread.Sleep(50);
+                this.Location = new Point(originalX + offsetX, originalY + offsetY);
+            }
+            this.Location = new Point(originalX, originalY); // Return to original position after shaking
+        }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -171,11 +187,32 @@ namespace EtchOSketch
         private void ClearButton_Click(object sender, EventArgs e)
         {
             DisplayPictureBox.Refresh();
+            ShakeEtchOSketch();
         }
 
         private void SelectColorButton_Click(object sender, EventArgs e)
         {
+            UpdatePenColor();
+        }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void selectColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdatePenColor();
+        }
+
+        private void drawWaveformsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DrawWaveformsButton_Click(sender, e);
+        }
+
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearButton_Click(sender, e);
         }
 
 
