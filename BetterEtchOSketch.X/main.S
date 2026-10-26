@@ -1,7 +1,7 @@
     ; Abel Doyle
     ; RCET3371
     ; BetterEtchOSketch
-    ; https://github.com/abeldoyl/RECT-3371-Assignments/tree/main/EtchOSketch
+    ; https://github.com/abeldoyl/EtchOSketch
 
 ; PIC16F883 Configuration Bit Settings
  
