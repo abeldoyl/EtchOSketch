@@ -148,8 +148,9 @@
             // exitToolStripMenuItem1
             // 
             exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            exitToolStripMenuItem1.Size = new Size(116, 26);
+            exitToolStripMenuItem1.Size = new Size(224, 26);
             exitToolStripMenuItem1.Text = "E&xit";
+            exitToolStripMenuItem1.Click += exitToolStripMenuItem1_Click;
             // 
             // editToolStripMenuItem1
             // 
@@ -163,18 +164,21 @@
             selectColorToolStripMenuItem1.Name = "selectColorToolStripMenuItem1";
             selectColorToolStripMenuItem1.Size = new Size(205, 26);
             selectColorToolStripMenuItem1.Text = "Select Color";
+            selectColorToolStripMenuItem1.Click += selectColorToolStripMenuItem1_Click;
             // 
             // drawWaveformsToolStripMenuItem1
             // 
             drawWaveformsToolStripMenuItem1.Name = "drawWaveformsToolStripMenuItem1";
             drawWaveformsToolStripMenuItem1.Size = new Size(205, 26);
             drawWaveformsToolStripMenuItem1.Text = "Draw Waveforms";
+            drawWaveformsToolStripMenuItem1.Click += drawWaveformsToolStripMenuItem1_Click;
             // 
             // clearToolStripMenuItem1
             // 
             clearToolStripMenuItem1.Name = "clearToolStripMenuItem1";
             clearToolStripMenuItem1.Size = new Size(205, 26);
             clearToolStripMenuItem1.Text = "&Clear";
+            clearToolStripMenuItem1.Click += clearToolStripMenuItem1_Click;
             // 
             // helpToolStripMenuItem1
             // 
@@ -186,8 +190,9 @@
             // aboutToolStripMenuItem1
             // 
             aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            aboutToolStripMenuItem1.Size = new Size(133, 26);
+            aboutToolStripMenuItem1.Size = new Size(224, 26);
             aboutToolStripMenuItem1.Text = "&About";
+            aboutToolStripMenuItem1.Click += aboutToolStripMenuItem1_Click;
             // 
             // DisplayPictureBox
             // 

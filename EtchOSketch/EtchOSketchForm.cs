@@ -158,7 +158,7 @@ namespace EtchOSketch
             if (shaking) return;
             shaking = true;
             try
-            { 
+            {
                 Random random = new Random();
                 Point original = DisplayPictureBox.Location;
                 for (int i = 0; i < 12; i++)
@@ -520,6 +520,7 @@ namespace EtchOSketch
             oldY = e.Y;
         }
 
+
         private void MouseRadioButton_CheckedChanged(object? sender, EventArgs e)
         {
             if (MouseRadioButton.Checked == true)
@@ -537,16 +538,40 @@ namespace EtchOSketch
             }
         }
 
-        private void SelectColorButton_Click(object? sender, EventArgs e) { UpdatePenColor(); }
-        private void DrawWaveformsButton_Click(object? sender, EventArgs e) { DrawWaveforms(); }
-        private void ClearButton_Click(object? sender, EventArgs e) { ClearWithShake(); }
-        private void ExitButton_Click(object? sender, EventArgs e) { this.Close(); }
+        private void SelectColorButton_Click(object? sender, EventArgs e)
+        {
+            UpdatePenColor();
+        }
+        private void DrawWaveformsButton_Click(object? sender, EventArgs e)
+        {
+            DrawWaveforms();
+        }
+        private void ClearButton_Click(object? sender, EventArgs e)
+        {
+            ClearWithShake();
+        }
+        private void ExitButton_Click(object? sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         // Menu items and context menu items share these handlers
-        private void exitToolStripMenuItem_Click(object? sender, EventArgs e) { this.Close(); }
-        private void selectColorToolStripMenuItem_Click(object? sender, EventArgs e) { UpdatePenColor(); }
-        private void drawWaveformsToolStripMenuItem_Click(object? sender, EventArgs e) { DrawWaveforms(); }
-        private void clearToolStripMenuItem_Click(object? sender, EventArgs e) { ClearWithShake(); }
+        private void exitToolStripMenuItem_Click(object? sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void selectColorToolStripMenuItem_Click(object? sender, EventArgs e)
+        {
+            UpdatePenColor();
+        }
+        private void drawWaveformsToolStripMenuItem_Click(object? sender, EventArgs e)
+        {
+            DrawWaveforms();
+        }
+        private void clearToolStripMenuItem_Click(object? sender, EventArgs e)
+        {
+            ClearWithShake();
+        }
 
         private void aboutToolStripMenuItem_Click(object? sender, EventArgs e)
         {
@@ -555,6 +580,35 @@ namespace EtchOSketch
                 "Middle click, Select Color, or the menus change the pen color.\n" +
                 "Clear shakes the screen; Draw Waveforms draws sine, cosine, and tangent on a 10x10 grid.",
                 "About");
+        }
+
+        private void selectColorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            UpdatePenColor();
+        }
+
+        private void drawWaveformsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DrawWaveforms();
+        }
+
+        private void clearToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ClearWithShake();
+        }
+
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Better Etch-O-Sketch (PIC Edition)\n" +
+               "Draw with the mouse (hold the left button) or with two potentiometers read by a PIC.\n" +
+               "Middle click, Select Color, or the menus change the pen color.\n" +
+               "Clear shakes the screen; Draw Waveforms draws sine, cosine, and tangent on a 10x10 grid.",
+               "About");
+        }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
