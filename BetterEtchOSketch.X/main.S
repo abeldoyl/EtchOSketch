@@ -112,6 +112,7 @@ servo_h       EQU 0x20        ; saved compare for the NEXT frame, high byte
 servo_l       EQU 0x21        ; saved compare for the NEXT frame, low byte
 servo_busy    EQU 0x22        ; bit 0 = 1 while the RC2 pulse is HIGH
 tx_data       EQU 0x23        ; tx_data[0..5] = 0x23..0x28, consecutive bytes
+adc_channel   EQU 0x7B        ; 0 or 2: which pot the ADC request wants
  
 ; ======================================================================
 ; Vectors
@@ -137,11 +138,12 @@ Setup:
     MOVLW 0xC0                  ; RC7/RX and RC6/TX = 1 for the EUSART, RC2 servo = output
     MOVWF TRISC
     BANKSEL TRISA
-    BSF TRISA,0                 ; RA0/AN0 (LM34) is an input
+    BSF TRISA,0                 ; RA0/AN0 (X Pot) is an input
     BCF TRISA,1                 ; RA1 diagnostic is an output
+    BSF TRISA,2			; RA2/AN2 (Y pot) is an input
  
     BANKSEL ANSEL
-    MOVLW 0x01                  ; AN0 analog, every other pin digital
+    MOVLW 0x05                  ; AN0 and AN2 analog, every other pin digital
     MOVWF ANSEL
     CLRF ANSELH
  
@@ -187,6 +189,7 @@ Setup:
     CLRF tx_data+3
     CLRF tx_data+4
     CLRF tx_data+5
+    CLRF adc_channel
  
     MOVLW SERVO_INIT_H          ; servo starts at 1500 us (0xB7BC)
     MOVWF servo_h
@@ -399,17 +402,24 @@ Parse_LengthServo:
     RETURN
  
 Parse_GetChannel:
-    CLRF rx_state               ; request ends here either way (WAIT_START)
+    CLRF rx_state
     MOVF rx_byte,F
-    BTFSS STATUS,2          ; Z: channel = 0 (AN0)?
-    RETURN
+    BTFSC STATUS,2              ; channel = 0?
+    GOTO Channel_Ok
+    MOVLW 2
+    XORWF rx_byte,W
+    BTFSS STATUS,2              ; channel = 2?
+    RETURN                      ; anything else is ignored
+Channel_Ok:
     MOVF reply_pending,F
-    BTFSS STATUS,2          ; Z: no reply pending?
+    BTFSS STATUS,2
     RETURN
+    MOVF rx_byte,W
+    MOVWF adc_channel
     MOVLW REPLY_ADC
     MOVWF reply_pending
     MOVLW ADC_IDLE
-    MOVWF adc_state             ; restart ADC sequence for this request
+    MOVWF adc_state
     RETURN
  
 Parse_GetMatchH:
@@ -525,7 +535,8 @@ ServiceReply:
     MOVWF tx_data+1
     MOVLW 3
     MOVWF tx_data+2
-    CLRF tx_data+3              ; channel 0x00
+    MOVF adc_channel,W
+    MOVWF tx_data+3             ; reply carries the channel back
     MOVF adc_high,W
     MOVWF tx_data+4             ; HH
     MOVF adc_low,W
@@ -578,10 +589,15 @@ Reply_Queue:                    ; shared path: packet is built, start sending it
 ; The host converts the raw count to degrees F (10 mV per degree F).
 ; ----------------------------------------------------------------------
 ServiceAdc:
-    MOVF adc_state,F
-    BTFSS STATUS,2          ; Z: ADC_IDLE?
-    GOTO Adc_NotIdle
-    BSF ADCON0,1           ; GO/DONE: start AN0 conversion
+    MOVLW 0x41                  ; AN0
+    BTFSC adc_channel,1
+    MOVLW 0x49                  ; AN2 (CHS = 0010)
+    MOVWF ADCON0
+    MOVLW 8
+    MOVWF adc_low               ; ~24 us acquisition delay (scratch use)
+    DECFSZ adc_low,F
+    GOTO $-1
+    BSF ADCON0,1                ; GO/DONE
     MOVLW ADC_BUSY
     MOVWF adc_state
     RETURN
