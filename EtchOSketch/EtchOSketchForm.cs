@@ -1,10 +1,10 @@
-/*
+/* 
 Abel Doyle
-RCET 2265
-Spring Semester 2026
-EtchOSketch
-https://github.com/abeldoyl/EtchOSketch.git
+RCET3371
+BetterEtchOSketch
+https://github.com/abeldoyl/RECT-3371-Assignments/tree/main/EtchOSketch
 */
+using System.IO.Ports;
 namespace EtchOSketch
 {
     public partial class EtchOSketchForm : Form

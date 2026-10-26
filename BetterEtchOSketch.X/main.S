@@ -1,7 +1,7 @@
     ; Abel Doyle
-    ; RCET3375
-    ; Lab8-4UART
-    ; https://github.com/abeldoyl/Lab-08-UART/tree/main/Lab8-4UART/Lab8-4UART.X
+    ; RCET3371
+    ; BetterEtchOSketch
+    ; https://github.com/abeldoyl/RECT-3371-Assignments/tree/main/EtchOSketch
 
 ; PIC16F883 Configuration Bit Settings
  
